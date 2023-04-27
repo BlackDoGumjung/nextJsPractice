@@ -6,9 +6,11 @@ import Food1 from '/public/food1.png'
 import Food2 from '/public/food2.png'
 
 export default function List() {
-  const [items, setItems] = useState([ { name: 'Tomato', price: 40, img: 'food0.png', qty:0 }, // Food0 사용하려면 Image 태그로...
-                { name: 'Pasta', price: 80, img: 'food1.png', qty: 0},
-                { name: 'Coconut', price: 25, img: 'food2.png', qty:0 }]);
+  const [items, setItems] = useState([
+    { name: 'Tomato', price: 40, img: 'food0.png', qty:0 }, // Food0 사용하려면 Image 태그로...
+    { name: 'Pasta', price: 80, img: 'food1.png', qty: 0 },
+    { name: 'Coconut', price: 25, img: 'food2.png', qty:0 }
+  ]);
   // let [count, setCount] = useState([ITEMS[0].qty, ITEMS[1].qty, ITEMS[2].qty]);
 
 const handleCountChange = (index, delta) => {
@@ -16,7 +18,7 @@ const handleCountChange = (index, delta) => {
     const copyItem = [...prevItem];
     copyItem[index].qty += delta;
     return copyItem;
-  }) //아이템들을 카피한 후 받아온 delta 값으로 더해주고 그 값을 리턴해서 setItems()으로 변경
+  }) //아이템들을 카피한 후 받아온 delta 값으로 더해주고 그 값들을 리턴해서 setItems() 전체 변경
 }
   return (
     <div>
